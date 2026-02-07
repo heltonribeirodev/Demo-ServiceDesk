@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=League+Gothic&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --blue: #35457b;
+    --red: #c95451;
+    --text: #f3f7fa;
+    --grey: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-a {
+    color: var(--red);
+    pointer-events: none; 
+    opacity: 0.8;           
+    cursor: not-allowed;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    font-weight: 600;
+    color: var(--text);
+}
+
+header nav a:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+    transition: 0.3s;
+    color: var(--red);
+}
+
+header {
+    position: block;
+    inset: 0 0 auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: var(--blue);
+    z-index: 99;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.btn-account i {
+    font-size: 20px;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.btn-account:hover i {
+    color: var(--red);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 15px;
+    display: none;
+    z-index: 999;
+}
+
+/* Classe ativada pelo JS */
+.user-dropdown.active {
+    display: block;
+}
+
+.user-dropdown {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.user-dropdown.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.user-actions {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-action {
+    background-color: var(--blue);
+    color: var(--text);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #35457b88;
+}
+
+.btn-logout {
+    background-color: var(--red);
+    color: var(--text);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #c9555188;
+}
+
+.txt-user {
+    color: var(--grey);
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.txt-user-div {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.user-info {
+    flex-direction: column;
+}
+
+.txt-p {
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+}
+.txt-p span{
+    color: var(--red);
+}
+
+.wrapper {
+    flex: 1;
+    width: 100%;
+    padding-bottom: 20px;
+    background: linear-gradient(90deg, rgba(243, 247, 250, 1) 0%, rgba(209, 209, 209, 1) 58%);
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--text);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    margin-top: auto; 
+    position: relative;
+    z-index: 10;
+}
+
+footer a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--red);
+}
+
+
+/* Container Principal da Página de Formulário */
+.forms-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px 20px 10px 20px; 
+    background: linear-gradient(90deg, rgba(243, 247, 250, 1) 0%, rgba(209, 209, 209, 1) 58%);
+}
+
+/* O Card Branco do Formulário */
+.hero-forms {
+    width: 100%;
+    max-width: 1600px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(53, 69, 123, 0.15);
+}
+
+/* Cabeçalho interno do card (Título e botão fechar) */
+.hero-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9;
+
+    position: relative; /* 👈 ADICIONE ISSO */
+}
+
+.hero-header h2 {
+    color: var(--blue);
+    font-size: 24px;
+    margin: 0;
+}
+
+.retorn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: solid 2px var(--red);
+
+    background-color: transparent;
+    color: var(--red);
+    font-size: 20px;
+
+    outline: none;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.retorn button:hover {
+    background-color: var(--red);
+    color: var(--text);
+    transform: translateY(-2px) scale(1.1);
+    filter: brightness(0.8);
+}
+
+/* Grid do Formulário */
+
+.tipoForm button.active {
+    background-color: var(--blue);
+    color: var(--text)
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px; /* Espaço entre o texto e a caixa */
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue);
+    padding-left: 5px;
+}
+
+.patrimonio,
+.select-setor,
+.categoria,
+.prioridade,
+.assunto,
+.descricao {
+    display: flex;
+    flex-direction: column; 
+    border: none; 
+    padding: 0;
+    background: transparent;
+    height: auto;
+}
+
+form input[type="text"],
+form input[type="number"], 
+form select,
+form textarea {
+    width: 100%;
+    border: 2px solid var(--blue); 
+    border-radius: 15px;
+    background-color: transparent;
+    color: #333;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+    appearance: none;
+}
+
+form input[type="text"],
+form select {
+    height: 45px;
+    padding: 0 15px;
+}
+
+form textarea {
+    min-height: 120px;
+    padding: 15px;
+    resize: vertical;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(53, 69, 123, 0.1); 
+}
+
+/* Placeholder */
+form ::placeholder {
+    color: #999;
+}
+
+.assunto,
+.descricao,
+.upload-area {
+    grid-column: span 5;
+}
+
+.upload-area {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.upload-area input {
+    display: none; 
+}
+
+/* O botão visual de upload */
+.upload-area label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--blue);
+    border: 2px dashed var(--blue);
+    border-radius: 16px;
+    padding: 30px;
+    background: rgba(53, 69, 123, 0.03);
+    transition: 0.3s;
+    cursor: pointer;
+    width: 100%;
+    max-width: 600px;
+}
+
+.upload-area label i {
+    font-size: 40px;
+}
+
+.upload-area label:hover {
+    background: rgba(53, 69, 123, 0.1);
+    transform: translateY(-2px);
+}
+
+#lista-arquivos {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.lista-arquivos {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.clear, .create {
+    grid-column: span 4;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.clear {
+    justify-content: flex-start; 
+    margin-top: 10px;
+}
+
+.create {
+    margin-top: 10px;
+}
+
+.btn-clear {
+    padding: 10px 25px;
+    border-radius: 12px;
+    border: 2px solid var(--red);
+    background: transparent;
+    color: var(--red);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-clear:hover {
+    background-color: var(--red);
+    color: #fff;
+}
+
+.btn-create {
+    padding: 12px 40px;
+    border-radius: 12px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-create:hover {
+    background-color: #2a3a6b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(53, 69, 123, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 1001;          /* 👈 FORÇA FICAR CLICÁVEL */
+    position: relative;    /* 👈 NECESSÁRIO PARA Z-INDEX */
+}
+
+/* =========================================
+   RESPONSIVIDADE (CELULAR)
+   ========================================= */
+@media (max-width: 900px) {
+    
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .menu-toggle {
+        display: block;
+    }
+
+    /* ESCONDE MENU */
+    .navigation {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--blue);
+        display: none;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        display: block;
+    }
+
+    .navigation nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        align-items: center;
+    }
+    
+    /* Formulário vira 1 coluna só */
+    form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .upload-area p,
+    .upload-area span {
+        text-align: center;
+    }
+
+    /* Reseta os spans para caber na tela */
+    .assunto,
+    .descricao,
+    .upload-area,
+    .clear,
+    .create {
+        grid-column: span 1;
+    }
+    
+    .hero-forms {
+        padding: 20px;
+    }
+
+    /* Botões ocupam largura total */
+    .btn-create, .btn-clear {
+        width: 100%;
+        height: 50px;
+    }
+
+
+    .user-dropdown {
+        position: fixed;              /* 👈 chave da solução */
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        width: 90vw;
+        max-width: 360px;
+
+        background: #fff;
+        border-radius: 16px;
+        z-index: 2000;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+
+    .user-dropdown.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%);
+    }
+}

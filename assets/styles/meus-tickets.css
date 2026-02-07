@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=League+Gothic&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --blue: #35457b;
+    --red: #c95451;
+    --text: #f3f7fa;
+    --grey: #6c757d;
+}
+
+* {     
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-a {
+    color: var(--red);
+    pointer-events: none; 
+    opacity: 0.8;          
+    cursor: not-allowed;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    font-weight: 600;
+    color: var(--text);
+}
+
+header nav a:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+    transition: 0.3s;
+    color: var(--red);
+}
+
+header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: var(--blue);
+    z-index: 99;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.btn-account i {
+    font-size: 20px;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.btn-account:hover i {
+    color: var(--red);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 15px;
+    display: none;
+    z-index: 999;
+}
+
+/* Classe ativada pelo JS */
+.user-dropdown.active {
+    display: block;
+}
+
+.user-dropdown {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.user-dropdown.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.user-actions {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-action {
+    background-color: var(--blue);
+    color: var(--text);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #35457b88;
+}
+
+.btn-logout {
+    background-color: var(--red);
+    color: var(--text);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #c9555188;
+}
+
+.txt-user {
+    color: var(--grey);
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.txt-user-div {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.user-info {
+    flex-direction: column;
+}
+
+.txt-p {
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+}
+.txt-p span{
+    color: var(--red);
+}
+
+.wrapper {
+    flex: 1;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 100px; 
+    background: linear-gradient(90deg, rgba(243, 247, 250, 1) 0%, rgba(209, 209, 209, 1) 58%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--text);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    margin-top: auto; 
+    position: relative;
+    z-index: 10;
+}
+
+footer a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--red);
+}
+
+/*------------------------------------*/
+
+.content-box {
+    width: 95%;
+    max-width: 1600px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(53, 69, 123, 0.3);
+    margin-bottom: 20px;
+}
+
+.tickets-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tickets-header h2 {
+    color: var(--blue);
+    font-size: 24px;
+}
+
+.btn-novo {
+    background-color: var(--blue);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-novo:hover {
+    background-color: rgba(68, 89, 147, 0.50);
+    color: var(--blue);
+    transform: translateY(-2px);
+}
+
+/* --- TABELA --- */
+
+.table-responsive {
+    overflow-x: auto; /* Permite rolagem lateral no celular */
+}
+
+.table-tickets {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; 
+}
+
+.table-tickets th {
+    background: #f8f9fa;
+    color: var(--grey);
+    text-align: left;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.table-tickets td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+    vertical-align: middle;
+}
+
+.table-tickets tr:hover {
+    background-color: #f1f5f9; /* Efeito hover na linha */
+}
+
+/* Prioridade */
+.priority {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.priority.urgente { color: var(--red); }
+.priority.alta { color: #d97706; }
+.priority.média { color: #35457b; }
+.priority.baixa { color: #16a34a; }
+
+/* Status */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+/* Cores específicas dos Status */
+.status-badge.aberto { background: #dbeafe; /* Azul claro */
+    color: #1e40af;} /* Azul claro */
+.status-badge.em-andamento { background: #fef3c7; /* Amarelo/Laranja claro */
+    color: #92400e;} /* Roxo/Indigo */
+.status-badge.resolvido {
+    background: rgb(255, 255, 149); 
+    color: grey;
+}
+.status-badge.concluido { background: #dcfce7; /* Verde claro */
+    color: #166534; } /* Verde */
+
+/* Botão de Ver Detalhes (Lupa) */
+.btn-view {
+    color: var(--blue);
+    font-size: 20px;
+    transition: 0.3s;
+    display: inline-flex;
+    padding: 5px;
+    border-radius: 50%;
+    justify-content: center;
+}
+.btn-view:hover {
+    background-color: rgba(53, 69, 123, 0.1);
+    transform: scale(1.1);
+}
+
+/* Estado Vazio (Sem tickets) */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--grey);
+}
+.empty-state i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+    color: #cbd5e1;
+}
+
+/* Alerta de Sucesso */
+.alert-success {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #bbf7d0;
+    font-weight: 600;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 1001;          /* 👈 FORÇA FICAR CLICÁVEL */
+    position: relative;    /* 👈 NECESSÁRIO PARA Z-INDEX */
+}
+
+
+
+/* =========================================
+   RESPONSIVIDADE - MEUS TICKETS (CORRIGIDO)
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* ESCONDE MENU */
+    .navigation {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--blue);
+        display: none;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        display: block;
+    }
+
+    .navigation nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    /* 3. O Card Branco (Content Box): MANTÉM O DESIGN */
+    .content-box {
+        width: 95%; /* Deixa uma margem lateral para ver o fundo degradê */
+        margin: 0 auto; /* Centraliza */
+        padding: 20px; /* Reduz um pouco o padding interno */
+        
+        /* Mantivemos o background: #fff e o box-shadow originais */
+    }
+
+    /* 4. Cabeçalho da Tabela */
+    .tickets-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Botão ocupa a largura toda para facilitar o clique */
+    .btn-novo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;          /* 👈 ativa rolagem lateral */
+        -webkit-overflow-scrolling: touch; /* scroll suave no iOS */
+        border-radius: 12px;
+    }
+
+    .table-tickets {
+        min-width: 900px;          /* 👈 força rolagem só se precisar */
+    }
+
+    .table-tickets th, 
+    .table-tickets td {
+        white-space: nowrap; /* Garante que o texto não quebre feio */
+        padding: 12px;
+    }
+
+        
+
+    /* 1. Ajuste do Contêiner do Ícone */
+    .user-menu {
+        /* Garante que o ícone e o menu fiquem centralizados */
+        display: flex;
+        justify-content: center;
+        position: relative; /* Necessário para o posicionamento absoluto do filho */
+        width: 100%; /* Ocupa a largura disponível */
+    }
+
+    .user-dropdown {
+        position: fixed;              /* 👈 chave da solução */
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        width: 90vw;
+        max-width: 360px;
+
+        background: #fff;
+        border-radius: 16px;
+        z-index: 2000;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+
+    .user-dropdown.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%);
+    }
+}

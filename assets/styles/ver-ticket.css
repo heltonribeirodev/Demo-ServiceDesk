@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=League+Gothic&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+    --blue: #35457b;
+    --red: #c95451;
+    --text: #f3f7fa;
+    --grey: #6c757d;
+}
+
+* {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-a {
+    color: var(--red);
+    pointer-events: none; 
+    opacity: 0.8;          
+    cursor: not-allowed;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    font-weight: 600;
+    color: var(--text);
+}
+
+header nav a:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+    transition: 0.3s;
+    color: var(--red);
+}
+
+header {
+    position: block;
+    inset: 0 0 auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: var(--blue);
+    z-index: 99;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.btn-account i {
+    font-size: 20px;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.btn-account:hover i {
+    color: var(--red);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 15px;
+    display: none;
+    z-index: 999;
+}
+
+/* Classe ativada pelo JS */
+.user-dropdown.active {
+    display: block;
+}
+
+.user-dropdown {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.user-dropdown.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.user-actions {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-action {
+    background-color: var(--blue);
+    color: var(--text);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #35457b88;
+}
+
+.btn-logout {
+    background-color: var(--red);
+    color: var(--text);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #c9555188;
+}
+
+.txt-user {
+    color: var(--grey);
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.txt-user-div {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.user-info {
+    flex-direction: column;
+}
+
+.txt-p {
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+}
+.txt-p span{
+    color: var(--red);
+}
+
+.wrapper {
+    flex: 1;
+    width: 100%;
+    padding-bottom: 20px;
+    background: linear-gradient(90deg, rgba(243, 247, 250, 1) 0%, rgba(209, 209, 209, 1) 58%);
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--text);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    margin-top: auto; 
+    position: relative;
+    z-index: 10;
+}
+
+footer a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--red);
+}
+
+/*--------------*/
+
+
+.content-box {
+    width: 100%;
+    max-width: 1500px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(53, 69, 123, 0.3);
+    margin: 20px auto 20px auto;
+}
+
+.tickets-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 20px;
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-group a {
+    color: var(--blue);
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.title-group a:hover {
+    transform: translateX(-5px);
+    color: var(--red);
+}
+
+.tickets-header h2 {
+    color: var(--blue);
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Badges de Status (Cores Específicas) */
+.status-badge {
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.status-badge.aberto { background: #dbeafe; /* Azul claro */
+    color: #1e40af;} /* Azul claro */
+.status-badge.em-andamento { background: #fef3c7; /* Amarelo/Laranja claro */color: #92400e;} /* Roxo/Indigo */
+.status-badge.resolvido {
+    background: rgb(255, 255, 149); 
+    color: grey;
+}
+.status-badge.concluido { background: #dcfce7; /* Verde claro */
+    color: #166534; } /* Verde */
+
+/* --- Detalhes e Descrição --- */
+.ticket-details {
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.ticket-details p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.ticket-details hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.descricao-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.btn-anexo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-anexo:hover {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+/* CHAT */
+
+.chat-section {
+    margin-top: 40px;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 30px;
+}
+
+.chat-section h3 {
+    color: var(--blue);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-box {
+    background-color: #f4f6f8;
+    border-radius: 12px;
+    padding: 25px;
+    max-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #e1e4e8;
+    margin-bottom: 25px;
+}
+
+.empty-chat {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Balões de Mensagem */
+.message {
+    max-width: 80%;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.msg-me {
+    align-self: flex-end;
+    background-color: #dbeafe;
+    color: #1e40af;
+    border-bottom-right-radius: 2px;
+}
+
+.msg-other {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 2px;
+}
+
+.msg-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 11px;
+    opacity: 0.8;
+    gap: 15px;
+}
+
+/* Formulário de Envio */
+.chat-form {
+    display: flex;
+    gap: 15px;
+}
+
+.chat-form textarea {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    height: 60px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.chat-form textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(53, 69, 123, 0.1);
+}
+
+.chat-form button {
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    width: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-form button:hover {
+    background-color: #2a3a6b;
+    transform: scale(1.05);
+}
+
+.alert-closed {
+    text-align: center;
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 8px;
+    color: #6c757d;
+    font-weight: 700;
+    border: 1px dashed #ccc;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 1001;          /* 👈 FORÇA FICAR CLICÁVEL */
+    position: relative;    /* 👈 NECESSÁRIO PARA Z-INDEX */
+}
+
+/* =========================================
+   RESPONSIVIDADE - DETALHES DO TICKET & CHAT
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* ESCONDE MENU */
+    .navigation {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--blue);
+        display: none;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        display: block;
+    }
+
+    .navigation nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+        .btn-account {
+            position: relative;
+            z-index: 1002; /* acima do menu e do hamburguer */
+        }
+
+        /*-------------*/
+    
+    .wrapper {
+        padding-top: 20px;
+        align-items: flex-start;
+    }
+
+    .content-box {
+        width: 95%; /* Margem lateral para ver o fundo */
+        padding: 20px; /* Reduz padding interno para ganhar espaço */
+        margin: 10px auto;
+    }
+
+    /* --- 3. Cabeçalho do Ticket (Título e Botão Voltar) --- */
+.tickets-header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+
+
+.tickets-header h2,
+.tickets-header .status-badge {
+    display: inline-flex;
+    align-items: center;
+}
+.tickets-header .title-group {
+    flex-wrap: wrap;
+}
+
+.title-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-group h2 {
+    font-size: 18px;
+    line-height: 1.3;
+    flex: 1;
+}
+    /* --- 4. Detalhes e Descrição --- */
+    .ticket-details p {
+        font-size: 14px;
+        word-break: break-word; /* Evita que emails longos quebrem o layout */
+    }
+
+    .descricao-box {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    /* --- 5. Área de Chat --- */
+    .chat-section {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .chat-box {
+        padding: 15px;
+        max-height: 400px; /* Diminui a altura no celular */
+    }
+
+    /* Balões de mensagem ocupam mais espaço no celular */
+    .message {
+        max-width: 90%; 
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    /* --- 6. Formulário de Envio (Input + Botão) --- */
+    .chat-form {
+        flex-direction: row; /* Mantém lado a lado */
+        align-items: flex-end; /* Alinha na base */
+    }
+
+    .chat-form textarea {
+        height: 50px; /* Altura menor inicial */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Botão de enviar mais fácil de clicar */
+    .chat-form button {
+        width: 50px;
+        height: 50px; /* Quadrado perfeito */
+        font-size: 20px;
+    }
+
+
+        .user-menu {
+        /* Garante que o ícone e o menu fiquem centralizados */
+        display: flex;
+        justify-content: center;
+        position: relative; /* Necessário para o posicionamento absoluto do filho */
+        width: 100%; /* Ocupa a largura disponível */
+    }
+
+    .user-dropdown {
+        position: fixed;              /* 👈 chave da solução */
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        width: 90vw;
+        max-width: 360px;
+
+        background: #fff;
+        border-radius: 16px;
+        z-index: 2000;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+
+    .user-dropdown.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%);
+    }
+}

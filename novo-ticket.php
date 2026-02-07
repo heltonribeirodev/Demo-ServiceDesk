@@ -1,0 +1,189 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/new-ticket.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/img/F.png">
+    <script src="assets/js/script.js"></script>
+    <title>ForteCare | Novo Ticket</title>
+</head>
+
+<body>
+    <Header>
+        <div class="logo">
+            <img src="assets/img/fortecare h branco.png" alt="Logo ForteCare">
+        </div>
+
+        <div class="navigation" id="navigation">
+            <nav>
+                <a href="inicio.php">Inicio</a>
+                <a href="meus-tickets.php">Meus Tickets</a>
+                <a href="adm-painel.php" >Central de Administração</a>
+            </nav>
+        </div>
+
+
+        <div class="btn-account">
+            <div class="user-menu">
+                <a href="#" class="btn-usuario" id="btnUsuario" title="Minha Conta">
+                    <i class='bx bxs-user'></i>
+                </a>
+
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="txt-user-div">
+                        <h3 class="txt-user">
+                            Minha conta
+                        </h3>   
+                    </div>
+
+                    <p class="user-name"> <span><Strong>Nome: </Strong></span><?= $_SESSION['nome'] ?></p>
+                    <p class="user-email"> <span><Strong>E-mail: </Strong></span><?= $_SESSION['email'] ?></p>
+
+                <div class="user-info">
+                    <span><strong>Setor:</strong> <?= $_SESSION['setor'] ?></span>
+
+                </div>
+                <div class="user-info">
+                    <span><strong>Perfil:</strong> <?= $_SESSION['perfil'] ?></span>
+                </div>
+
+                <div class="txt-p">
+                    <p>
+                        <span>* </span>Caso seja necessário editar alguma informação, entre em contato com o setor de TI.
+                    </p>
+                </div>
+                    <div class="user-actions">
+                        <a href="alterar-senha.php" class="btn-action">Alterar Senha</a>
+                        <a href="logout.php" class="btn-logout">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <!-- BOTÃO HAMBURGUER (MOBILE) -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </Header>
+
+    <section id="home" class="forms-wrapper">
+        <article class="hero-forms">
+            <div class="hero-header">
+                <h2>
+                    Novo Ticket
+                </h2>
+
+                <div class="retorn">
+                    <button type="button" onclick="history.length > 1 ? history.back() : window.location.href='inicio.php';"><i class='bx bx-x'></i></button>
+                </div>
+            </div>
+
+            <form action="salvar-ticket.php" method="POST" enctype="multipart/form-data">
+
+                <div class="tipo">
+                    <span class="form-label">Tipo de Ticket</span>
+                    <select name="tipo" required>
+                        <option value="" disabled selected>Tipo de Ticket</option>
+                        <option value="Manutenção">Manutenção</option>
+                        <option value="Tickets TI">Tickets TI</option>
+                    </select>
+                </div>
+
+                <div class="patrimonio">
+                    <span class="form-label">Nº Patrimônio</span>
+                    <input type="Text" placeholder="Patrimônio não controlado #9999" required name="patrimonio">
+                </div>
+
+                <div class="select-setor">
+                    <span class="form-label">Setor</span>
+                    <select name="setor" required>
+                        <option value="" disabled selected>Setor</option>
+                        <option value="Almoxarifado">Almoxarifado</option>
+                        <option value="Comercial">Comercial</option>
+                        <option value="Compras">Compras/Comex</option>
+                        <option value="Embalagem">Embalagem</option>
+                        <option value="Extrusora">Extrusora</option>
+                        <option value="Financeiro">Financeiro</option>
+                        <option value="Logistica">Logística</option>
+                        <option value="Producao">Produção</option>
+                        <option value="Qualidade">Qualidade</option>
+                        <option value="RH">RH</option>
+                        <option value="Ti">TI</option>
+                    </select>
+                </div>
+
+                <div class="categoria">
+                    <span class="form-label">Categoria</span>
+                    <select name="categoria" required>
+                        <option value="" disabled selected>Categoria </option>
+                    </select>
+                </div>
+
+                <div class="prioridade">
+                    <span class="form-label">Prioridade</span>
+                    <select name="prioridade" required>
+                        <option value="" disabled selected>Prioridade</option>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Urgente">Urgente</option>
+                    </select>
+                </div>
+
+                <div class="assunto">
+                    <span class="form-label">Assunto</span>
+                    <input type="text" placeholder="Descreva resumidamente o assunto do ticket." required name="assunto">
+                </div>
+
+                <div class="descricao">
+                    <span class="form-label">Descrição</span>
+                    <textarea placeholder="Descreva detalhadamente o motivo da abertura do ticket." required name="descricao"></textarea>
+                </div>
+
+                <div class="upload-area"> <input type="file" id="upload" multiple name="anexos[]">
+                    
+                    <label for="upload">
+                        <i class='bx bx-cloud-upload'></i>
+                        <p><strong>Arraste os arquivos</strong> ou clique</p>
+                        <span>* apenas um anexo por ticket </span>
+                    </label>
+
+                    <div id="lista-arquivos" class="lista-arquivos"></div> 
+                </div>
+                
+                
+        </article>
+                <div class="clear">
+                    <button class="btn-clear" type="reset">Limpar dados <i class='bx bxs-eraser'></i></button>
+                </div>
+
+                <div class="create">
+                    <button class="btn-create" type="submit">Criar Ticket </button>
+                </div>
+        </form>
+        
+    </section>
+    <footer class="copy">
+        <section>
+            <p>
+                &copy; 2026 ForteCare. Todos os direitos reservados.
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Desenvolvido com ❤️ por <a href="#" target="_blank">HR | DEV</a>.
+            </p>
+        </section>
+
+    </footer>
+</body>
+
+</html>
