@@ -10,7 +10,7 @@
 }
 
 * {
-    
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,8 +19,8 @@
 
 .select-a {
     color: var(--red);
-    pointer-events: none; 
-    opacity: 0.8;          
+    pointer-events: none;
+    opacity: 0.8;
     cursor: not-allowed;
 }
 
@@ -104,7 +104,7 @@ header {
     width: 400px;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     padding: 15px;
     display: none;
     z-index: 999;
@@ -189,7 +189,8 @@ header {
     margin: 10px 0px 10px 0px;
     text-align: center;
 }
-.txt-p span{
+
+.txt-p span {
     color: var(--red);
 }
 
@@ -208,7 +209,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     font-size: 12px;
-    margin-top: auto; 
+    margin-top: auto;
     position: relative;
     z-index: 10;
 }
@@ -239,7 +240,7 @@ footer a:hover {
 }
 
 .form-container {
-    background-color:#fff;
+    background-color: #fff;
     border-radius: 16px;
     box-shadow: 0 20px 60px rgba(53, 69, 123, 0.3);
     display: block;
@@ -279,7 +280,7 @@ footer a:hover {
     outline: none;
 }
 
-/* 👁️ OLHO */
+/*  OLHO */
 .toggle-password {
     position: absolute;
     top: 50%;
@@ -395,11 +396,9 @@ footer a:hover {
     font-size: 32px;
     color: var(--text);
     cursor: pointer;
-    z-index: 1001;          /* 👈 FORÇA FICAR CLICÁVEL */
-    position: relative;    /* 👈 NECESSÁRIO PARA Z-INDEX */
+    z-index: 1001;
+    position: relative;
 }
-
-
 
 @media (max-width: 900px) {
 

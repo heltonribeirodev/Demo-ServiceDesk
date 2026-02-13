@@ -647,7 +647,7 @@ footer a:hover {
 }
 
 .status-badge.resolvido {
-    background: rgb(255, 255, 149); 
+    background: rgb(255, 255, 149);
     color: grey;
 }
 
@@ -656,10 +656,7 @@ footer a:hover {
     color: #166534;
 }
 
-
-
 /* -------RELATORIOS------- */
-
 .cards-section {
     display: flex;
     justify-content: center;
@@ -756,9 +753,7 @@ footer a:hover {
     /* 👈 NECESSÁRIO PARA Z-INDEX */
 }
 
-/* =========================================
-   RESPONSIVIDADE (Celular)
-   ========================================= */
+/* Responsividade */
 @media (max-width: 900px) {
     header {
         flex-direction: row;
@@ -918,7 +913,7 @@ footer a:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;   
+        justify-content: center;
     }
 
     .usuarios-actions {
@@ -933,37 +928,47 @@ footer a:hover {
     }
 
     .usuarios-container {
-    width: 100%;
-    max-width: 100%; /* Não deixa passar da largura da tela */
-    background: #eef2f7; /* Sua cor de fundo atual */
-    border-radius: 16px;
-    padding: 24px;
-    box-sizing: border-box; /* Importante para o padding não estourar */
-    overflow: hidden; /* O que for maior que ele, fica escondido ou controlado */
-}
+        width: 100%;
+        max-width: 100%;
+        /* Não deixa passar da largura da tela */
+        background: #eef2f7;
+        /* Sua cor de fundo atual */
+        border-radius: 16px;
+        padding: 24px;
+        box-sizing: border-box;
+        /* Importante para o padding não estourar */
+        overflow: hidden;
+        /* O que for maior que ele, fica escondido ou controlado */
+    }
 
-/* 2. O Envelope da Tabela (Quem cria a rolagem) */
-.table-wrapper {
-    width: 100%; /* Ocupa todo o espaço disponível dentro do card */
-    overflow-x: auto; /* CRIA A BARRA DE ROLAGEM SE PRECISAR */
-    -webkit-overflow-scrolling: touch; /* Rolagem macia no celular */
-    margin-top: 20px;
-    border-radius: 14px;
-    border: 1px solid #e0e0e0; /* Opcional: borda sutil ao redor da tabela */
-}
+    /* 2. O Envelope da Tabela (Quem cria a rolagem) */
+    .table-wrapper {
+        width: 100%;
+        /* Ocupa todo o espaço disponível dentro do card */
+        overflow-x: auto;
+        /* CRIA A BARRA DE ROLAGEM SE PRECISAR */
+        -webkit-overflow-scrolling: touch;
+        /* Rolagem macia no celular */
+        margin-top: 20px;
+        border-radius: 14px;
+        border: 1px solid #e0e0e0;
+        /* Opcional: borda sutil ao redor da tabela */
+    }
 
-/* 3. A Tabela (Forçamos ela a ser larga) */
-.usuarios-table {
-    width: 100%;
-    min-width: 900px; /* <--- FORÇA A LARGURA: Se a tela for menor que 900px, a rolagem aparece */
-    border-collapse: collapse;
-}
+    /* 3. A Tabela (Forçamos ela a ser larga) */
+    .usuarios-table {
+        width: 100%;
+        min-width: 900px;
+        /* <--- FORÇA A LARGURA: Se a tela for menor que 900px, a rolagem aparece */
+        border-collapse: collapse;
+    }
 
-/* 4. Evita que o texto quebre (ajuda a manter a tabela alinhada) */
-.usuarios-table th, 
-.usuarios-table td {
-    white-space: nowrap; /* Impede que "João da Silva" quebre em duas linhas */
-    padding: 12px 15px;
-    text-align: left;
-}
+    /* 4. Evita que o texto quebre (ajuda a manter a tabela alinhada) */
+    .usuarios-table th,
+    .usuarios-table td {
+        white-space: nowrap;
+        /* Impede que "João da Silva" quebre em duas linhas */
+        padding: 12px 15px;
+        text-align: left;
+    }
 }
