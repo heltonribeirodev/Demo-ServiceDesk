@@ -1,14 +1,4 @@
-<?php
-session_start(); // Inicia a sessão para ler os dados
-// var_dump($_SESSION); // Remova ou comente esta linha depois de testar!
 
-
-// Verificação de segurança (opcional, mas recomendado):
-if (!isset($_SESSION['id'])) {
-    header("Location: login.php");
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,9 +20,9 @@ if (!isset($_SESSION['id'])) {
 
         <div class="navigation" id="navigation">
             <nav>
-                <a href="inicio.php" class="select-a">Inicio</a>
-                <a href="meus-tickets.php">Meus Tickets</a>
-                <a href="adm-painel.php" >Central de Administração</a>
+                <a href="inicio.html">Inicio</a>
+                <a href="meus-tickets.html">Meus Tickets</a>
+                <a href="adm-painel.html" >Central de Administração</a>
             </nav>
         </div>
 
@@ -50,15 +40,15 @@ if (!isset($_SESSION['id'])) {
                         </h3>   
                     </div>
 
-                    <p class="user-name"> <span><Strong>Nome: </Strong></span><?= $_SESSION['nome'] ?></p>
-                    <p class="user-email"> <span><Strong>E-mail: </Strong></span><?= $_SESSION['email'] ?></p>
+                    <p class="user-name"> <span><Strong>Nome: </Strong></span>User</p>
+                    <p class="user-email"> <span><Strong>E-mail: </Strong></span>admin@empresa.com</p>
 
                 <div class="user-info">
-                    <span><strong>Setor:</strong> <?= $_SESSION['setor'] ?></span>
+                    <span><strong>Setor: </strong>TI</span>
 
                 </div>
                 <div class="user-info">
-                    <span><strong>Perfil:</strong> <?= $_SESSION['perfil'] ?></span>
+                    <span><strong>Perfil: </strong>Admin</span>
                 </div>
 
                 <div class="txt-p">
@@ -67,8 +57,8 @@ if (!isset($_SESSION['id'])) {
                     </p>
                 </div>
                     <div class="user-actions">
-                        <a href="alterar-senha.php" class="btn-action">Alterar Senha</a>
-                        <a href="logout.php" class="btn-logout">Sair</a>
+                        <a href="" class="btn-action">Alterar Senha</a>
+                        <a href="" class="btn-logout">Sair</a>
                     </div>
                 </div>
             </div>
@@ -84,15 +74,15 @@ if (!isset($_SESSION['id'])) {
         <article class="hero">
             <div>
                 <h1>
-                    Bem vindo a central de serviços ForteCare!
+                    Service Desk
                 </h1>
 
                 <p> 
-                    Abra e acompanhe chamados de TI e Manutenção Predial em um só lugar. Mais agilidade para o seu ambiente de trabalho.
+                    <strong>Aviso de Demonstração:</strong> Você está navegando em uma versão estática do ForteCare. Esta demo foi criada para demonstrar a interface e a experiência do usuário (UX/UI). As funcionalidades de banco de dados e envio de e-mails estão desativadas nesta versão.
                 </p>
 
                 <nav class="hero-buttons">
-                    <a href="novo-ticket.php" class="btn-outline">🎟️ Novo Ticket</a>
+                    <a href="novo-ticket.html" class="btn-outline">🎟️ Novo Ticket</a>
                 </nav>
             </div>
             <img src="assets/img/support.png" alt="support">

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/adm.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/img/F.png">
+    <script src="assets/js/script.js"></script>
+    <title>ForteCare | Central de Administração</title>
+
+    <style>
+        .access-denied {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+            text-align: center;
+            color: var(--blue);
+            /* Usando sua variável se disponível, senão #35457b */
+        }
+
+        .access-denied i {
+            font-size: 80px;
+            color: #c95451;
+            /* Vermelho */
+            margin-bottom: 20px;
+        }
+
+        .access-denied h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .access-denied p {
+            font-size: 18px;
+            color: #6c757d;
+        }
+
+        .btn-voltar {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #35457b;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <Header>
+        <div class="logo">
+            <img src="assets/img/fortecare h branco.png" alt="Logo ForteCare">
+        </div>
+
+        <div class="navigation" id="navigation">
+            <nav>
+                <a href="inicio.html">Inicio</a>
+                <a href="meus-tickets.html">Meus Tickets</a>
+                <a href="adm-painel.html">Central de Administração</a>
+            </nav>
+        </div>
+
+
+        <div class="btn-account">
+            <div class="user-menu">
+                <a href="#" class="btn-usuario" id="btnUsuario" title="Minha Conta">
+                    <i class='bx bxs-user'></i>
+                </a>
+
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="txt-user-div">
+                        <h3 class="txt-user">
+                            Minha conta
+                        </h3>
+                    </div>
+
+                    <p class="user-name"> <span><Strong>Nome: </Strong></span>User</p>
+                    <p class="user-email"> <span><Strong>E-mail: </Strong></span>admin@empresa.com</p>
+
+                    <div class="user-info">
+                        <span><strong>Setor: </strong>TI</span>
+
+                    </div>
+                    <div class="user-info">
+                        <span><strong>Perfil: </strong>Admin</span>
+                    </div>
+
+                    <div class="txt-p">
+                        <p>
+                            <span>* </span>Caso seja necessário editar alguma informação, entre em contato com o setor
+                            de TI.
+                        </p>
+                    </div>
+                    <div class="user-actions">
+                        <a href="" class="btn-action">Alterar Senha</a>
+                        <a href="" class="btn-logout">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTÃO HAMBURGUER (MOBILE) -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </Header>
+    <section class="wrapper">
+
+        <article class="menu">
+            <div>
+                <nav>
+                    <a href="">
+                        Central de Usuários
+                    </a>
+                </nav>
+            </div>
+
+            <div>
+                <nav>
+                    <a href="">
+                        Controle de Patrimônio
+                    </a>
+                </nav>
+            </div>
+
+            <div>
+                <nav>
+                    <a href="">
+                        Gerenciador de Chamados
+                    </a>
+                </nav>
+            </div>
+
+
+            <div>
+                <nav>
+                    <a href="">
+                        Relatórios
+                    </a>
+                </nav>
+            </div>
+
+        </article>
+
+        <div class="txt-adm">
+            <h1>Ambiente Demo: Funcionalidades de Backend Desativadas</h1>
+
+            <p>
+                Para fins de exibição, este sistema está rodando de forma estática. As ações de banco de dados, como a criação e gerenciamento de usuários ou tickets, não serão processadas nesta visualização. Caso queira ver o sistema funcional em um ambiente real, entre em contato comigo.
+            </p>
+        </div>
+    </section>
+
+    <footer class="copy">
+        <section>
+            <p>
+                &copy; 2026 ForteCare. Todos os direitos reservados.
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Desenvolvido com ❤️ por <a href="#" target="_blank">HR | DEV</a>.
+            </p>
+        </section>
+
+    </footer>
+</body>
+
+</html>

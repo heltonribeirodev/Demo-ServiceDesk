@@ -1,10 +1,5 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,14 +18,14 @@ session_start();
 
         <div class="navigation" id="navigation">
             <nav>
-                <a href="inicio.php">Inicio</a>
-                <a href="meus-tickets.php">Meus Tickets</a>
-                <a href="adm-painel.php" >Central de Administração</a>
+                <a href="inicio.html">Inicio</a>
+                <a href="meus-tickets.html">Meus Tickets</a>
+                <a href="adm-painel.html" >Central de Administração</a>
             </nav>
         </div>
 
 
-        <div class="btn-account">
+                <div class="btn-account">
             <div class="user-menu">
                 <a href="#" class="btn-usuario" id="btnUsuario" title="Minha Conta">
                     <i class='bx bxs-user'></i>
@@ -43,15 +38,15 @@ session_start();
                         </h3>   
                     </div>
 
-                    <p class="user-name"> <span><Strong>Nome: </Strong></span><?= $_SESSION['nome'] ?></p>
-                    <p class="user-email"> <span><Strong>E-mail: </Strong></span><?= $_SESSION['email'] ?></p>
+                    <p class="user-name"> <span><Strong>Nome: </Strong></span>User</p>
+                    <p class="user-email"> <span><Strong>E-mail: </Strong></span>admin@empresa.com</p>
 
                 <div class="user-info">
-                    <span><strong>Setor:</strong> <?= $_SESSION['setor'] ?></span>
+                    <span><strong>Setor: </strong>TI</span>
 
                 </div>
                 <div class="user-info">
-                    <span><strong>Perfil:</strong> <?= $_SESSION['perfil'] ?></span>
+                    <span><strong>Perfil: </strong>Admin</span>
                 </div>
 
                 <div class="txt-p">
@@ -60,8 +55,8 @@ session_start();
                     </p>
                 </div>
                     <div class="user-actions">
-                        <a href="alterar-senha.php" class="btn-action">Alterar Senha</a>
-                        <a href="logout.php" class="btn-logout">Sair</a>
+                        <a href="" class="btn-action">Alterar Senha</a>
+                        <a href="" class="btn-logout">Sair</a>
                     </div>
                 </div>
             </div>
@@ -81,11 +76,11 @@ session_start();
                 </h2>
 
                 <div class="retorn">
-                    <button type="button" onclick="history.length > 1 ? history.back() : window.location.href='inicio.php';"><i class='bx bx-x'></i></button>
+                    <button type="button" onclick="history.length > 1 ? history.back() : window.location.href='inicio.html';"><i class='bx bx-x'></i></button>
                 </div>
             </div>
 
-            <form action="salvar-ticket.php" method="POST" enctype="multipart/form-data">
+            <form>
 
                 <div class="tipo">
                     <span class="form-label">Tipo de Ticket</span>
@@ -147,9 +142,9 @@ session_start();
                     <textarea placeholder="Descreva detalhadamente o motivo da abertura do ticket." required name="descricao"></textarea>
                 </div>
 
-                <div class="upload-area"> <input type="file" id="upload" multiple name="anexos[]">
+                <div class="upload-area">
                     
-                    <label for="upload">
+                    <label>
                         <i class='bx bx-cloud-upload'></i>
                         <p><strong>Arraste os arquivos</strong> ou clique</p>
                         <span>* apenas um anexo por ticket </span>
@@ -165,7 +160,7 @@ session_start();
                 </div>
 
                 <div class="create">
-                    <button class="btn-create" type="submit">Criar Ticket </button>
+                    <button class="btn-create">Criar Ticket </button>
                 </div>
         </form>
         

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/styles/ver-ticket.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="assets/img/F.png">
+    <script src="assets/js/script.js" defer></script>
+    <title>ForteCare | Detalhes do Ticket #
+        <?= $ticket['id'] ?>
+    </title>
+</head>
+
+<body>
+
+    <Header>
+        <div class="logo">
+            <img src="assets/img/fortecare h branco.png" alt="Logo ForteCare">
+        </div>
+
+        <div class="navigation" id="navigation">
+            <nav>
+                <a href="inicio.html">Inicio</a>
+                <a href="meus-tickets.html">Meus Tickets</a>
+                <a href="adm-painel.html">Central de Administração</a>
+            </nav>
+        </div>
+
+
+        <div class="btn-account">
+            <div class="user-menu">
+                <a href="#" class="btn-usuario" id="btnUsuario" title="Minha Conta">
+                    <i class='bx bxs-user'></i>
+                </a>
+
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="txt-user-div">
+                        <h3 class="txt-user">
+                            Minha conta
+                        </h3>
+                    </div>
+
+                    <p class="user-name"> <span><Strong>Nome: </Strong></span>User</p>
+                    <p class="user-email"> <span><Strong>E-mail: </Strong></span>admin@empresa.com</p>
+
+                    <div class="user-info">
+                        <span><strong>Setor: </strong>TI</span>
+
+                    </div>
+                    <div class="user-info">
+                        <span><strong>Perfil: </strong>Admin</span>
+                    </div>
+
+                    <div class="txt-p">
+                        <p>
+                            <span>* </span>Caso seja necessário editar alguma informação, entre em contato com o setor
+                            de TI.
+                        </p>
+                    </div>
+                    <div class="user-actions">
+                        <a href="" class="btn-action">Alterar Senha</a>
+                        <a href="" class="btn-logout">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- BOTÃO HAMBURGUER (MOBILE) -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </Header>
+
+    <section class="wrapper">
+        <article class="content-box">
+
+            <div class="tickets-header">
+                <div class="title-group">
+                    <a href="meus-tickets.html"> <i class='bx bx-arrow-back'></i>
+                    </a>
+                    <h2>Ticket #9999 - Internet apresenta lentidão</h2>
+                </div>
+                <span class="status-badge <?= $cssStatus ?>">Em andamento</span>
+            </div>
+
+            <div class="ticket-details">
+                <p><strong>Categoria: </strong>Rede</p>
+                <p><strong>Patrimônio: </strong>0123</p>
+                <p><strong>Data: </strong>01/01/2026</p>
+                <p><strong>Tipo de Ticket: </strong>TICKETS TI</p>
+                <hr>
+                <p><strong>Descrição:</strong></p>
+                <div class="descricao-box">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At ut quisquam nulla pariatur nisi
+                    necessitatibus cumque quos dolore dolorum maxime doloribus dolorem, quam repellendus recusandae
+                    deserunt voluptas, iusto facere dicta?
+                </div>
+                <a href="" target="_blank" class="btn-anexo">
+                    <i class='bx bx-paperclip'></i> Ver Anexo Enviado
+                </a>
+            </div>
+
+            <div class="chat-section">
+                <h3><i class='bx bx-chat'></i> Conversa com Suporte</h3>
+
+                <div class="chat-box">
+                    <div class="message <?= $classe_msg ?>">
+                        <div class="msg-header">
+                            <strong>
+                                Suporte
+                            </strong>
+                            <span>
+                                01/01/2026 - 00h00
+                            </span>
+                        </div>
+                        <div class="msg-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quis fugiat ea magnam qui libero laboriosam doloribus dolorem consectetur velit deleniti eius? Corporis ipsa, laudantium cupiditate aspernatur aliquid esse perferendis.
+                        </div>
+                    </div>
+                </div>
+
+                <?php if ($ticket['status'] !== 'Concluido'): ?>
+                <form method="POST" class="chat-form">
+                    <textarea name="mensagem" placeholder="Digite uma resposta ou dúvida..." required></textarea>
+                    <button type="submit"><i class='bx bx-send'></i></button>
+                </form>
+            </div>
+
+        </article>
+    </section>
+
+    <footer class="copy">
+        <section>
+            <p>&copy; 2026 ForteCare. Todos os direitos reservados.</p>
+        </section>
+        <section>
+            <p> Desenvolvido com ❤️ por <a href="#" target="_blank">HR | DEV</a>.</p>
+        </section>
+    </footer>
+</body>
+
+</html>

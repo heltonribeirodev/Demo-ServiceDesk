@@ -317,11 +317,6 @@ footer a:hover {
     font-size: 13px;
 }
 
-.priority.urgente { color: var(--red); }
-.priority.alta { color: #d97706; }
-.priority.média { color: #35457b; }
-.priority.baixa { color: #16a34a; }
-
 /* Status */
 .status-badge {
     padding: 6px 12px;
@@ -332,19 +327,6 @@ footer a:hover {
     display: inline-block;
     letter-spacing: 0.5px;
 }
-
-/* Cores específicas dos Status */
-.status-badge.aberto { background: #dbeafe; /* Azul claro */
-    color: #1e40af;} /* Azul claro */
-.status-badge.em-andamento { background: #fef3c7; /* Amarelo/Laranja claro */
-    color: #92400e;} /* Roxo/Indigo */
-.status-badge.resolvido {
-    background: rgb(255, 255, 149); 
-    color: grey;
-}
-.status-badge.concluido { background: #dcfce7; /* Verde claro */
-    color: #166534; } /* Verde */
-
 /* Botão de Ver Detalhes (Lupa) */
 .btn-view {
     color: var(--blue);
@@ -371,20 +353,6 @@ footer a:hover {
     margin-bottom: 15px;
     display: block;
     color: #cbd5e1;
-}
-
-/* Alerta de Sucesso */
-.alert-success {
-    background-color: #dcfce7;
-    color: #166534;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #bbf7d0;
-    font-weight: 600;
 }
 
 .menu-toggle {
