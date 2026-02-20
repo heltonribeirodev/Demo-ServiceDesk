@@ -50,5 +50,5 @@ Fundador da **HR|DEV**
 Desenvolvedor Web Freelancer  
 
 🌐 Portfólio: https://hr-dev-beta.vercel.app/
-💼 LinkedIn: [https://linkedin.com/in/seuusuario  ](https://www.linkedin.com/in/devheltonribeiro/)
+💼 LinkedIn: (https://www.linkedin.com/in/devheltonribeiro/)
 📧 Contato: oiheltong@gmail.com
