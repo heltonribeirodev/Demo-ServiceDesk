@@ -3,7 +3,7 @@
 Sistema web desenvolvido para gestão de tickets de TI e de manutenções internas
 
 ## 📸 Preview do Sistema
-
+![Preview do Projeto](ForteCare.png)
 
 ## 🧠 Sobre o Projeto
 
