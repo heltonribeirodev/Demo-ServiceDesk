@@ -40,16 +40,15 @@ A plataforma reduz falhas de comunicação, melhora o controle das demandas e au
 Este projeto foi desenvolvido sob demanda para uso interno, por isso o repositório completo não está disponível publicamente.  
 
 No entanto, uma versão demonstrativa pode ser acessada em:  
-🔗 [https://seusite.com](https://demo-service-desk.vercel.app/index.html)
+🔗 [https://demo-fortecare.com](https://demo-service-desk.vercel.app/index.html)
 
-<h1 align="left">👨‍💻 Desenvolvido por</h1>
 
-###
+## 👨‍💻 Desenvolvido por
 
-<img align="right" height="200" src=""  />
+**Helton Ribeiro**  
+Fundador da **HR|DEV**  
+Desenvolvedor Web Freelancer  
 
-###
-
-<p align="left">Helton Ribeiro.<br>Fundador da HR|DEV.<br>Desenvolvedor Web Freelancer.</p>
-
-###
+🌐 Portfólio: https://hr-dev-beta.vercel.app/
+💼 LinkedIn: [https://linkedin.com/in/seuusuario  ](https://www.linkedin.com/in/devheltonribeiro/)
+📧 Contato: oiheltong@gmail.com
