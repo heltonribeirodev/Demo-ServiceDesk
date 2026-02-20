@@ -49,6 +49,6 @@ No entanto, uma versão demonstrativa pode ser acessada em:
 Fundador da **HR|DEV**  
 Desenvolvedor Web Freelancer  
 
-🌐 Portfólio: https://hr-dev-beta.vercel.app/
-💼 LinkedIn: (https://www.linkedin.com/in/devheltonribeiro/)
-📧 Contato: oiheltong@gmail.com
+🌐 Portfólio: https://hr-dev-beta.vercel.app/ <br>
+💼 LinkedIn: https://www.linkedin.com/in/devheltonribeiro/ <br>
+📧 Contato: oiheltong@gmail.com<br>
